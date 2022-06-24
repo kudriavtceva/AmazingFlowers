@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap');
+body {
+    margin: 0;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'Roboto';
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.page-header {
+    min-width: 320px;
+    height: 105px;
+    background-color: #FBF2F2;
+}
+
+.menu {
+    padding-top: 15px;
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+
+.hamburger-menu {
+    padding-bottom: 20px;
+    ;
+    height: 10px;
+    ;
+}
+
+
+/* скрываем чекбокс */
+
+#menu__toggle {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* стилизуем кнопку */
+
+.menu__btn {
+    display: flex;
+    /* используем flex для центрирования содержимого */
+    align-items: center;
+    /* центрируем содержимое кнопки */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+    color: #6433189f;
+}
+
+
+/* добавляем "гамбургер" */
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+}
+
+.menu__btn>span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn>span::after {
+    content: '';
+    top: 8px;
+}
+
+
+/* контейнер меню */
+
+.menu__box {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 500px;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #FBF2F2;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+
+/* элементы меню */
+
+.menu__item {
+    display: block;
+    padding: 10px 18px;
+    color: #632E11;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    width: 80%;
+}
+
+.menu__item:hover {
+    background-color: #eed9d9;
+    max-width: 200px;
+}
+
+#menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    transition-duration: .25s;
+}
+
+.menu__box {
+    transition-duration: .25s;
+}
+
+.menu__item {
+    transition-duration: .25s;
+}
+
+.logo-img {
+    width: 126px;
+    height: 77px;
+    display: block;
+    margin: auto;
+}
+
+.icons__header {
+    visibility: hidden;
+    width: 164px;
+    height: 27px;
+    display: flex;
+    justify-content: space-evenly;
+    fill: inherit;
+    stroke: inherit;
+    stroke-width: inherit;
+}
+
+.amazing-flowers__main {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 155px;
+}
+
+.logo__main {
+    width: 40%;
+}
+
+.bouket__img {
+    width: 60%;
+}
+
+.logo__img,
+.bouket-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.about {
+    height: 100%;
+    background-color: #B090A4;
+    color: #FBF2F2;
+    text-align: center;
+    font-size: 14px;
+}
+
+.about__img,
+.team__img {
+    width: 42%;
+    padding-top: 10%;
+}
+
+.unic__subtitle,
+.team__subtitle {
+    font-family: 'Roboto';
+    margin: 0;
+    padding-top: 10%;
+}
+
+.unic,
+.team {
+    padding-top: 10%;
+}
+
+.about__txt,
+.team__txt {
+    margin: auto;
+    width: 80%;
+}
+
+.team {
+    padding-bottom: 10%;
+}
+
+.unic__title,
+.team__title {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.border__unic {
+    width: 40%;
+    margin: auto;
+    padding-top: 4%;
+    border: 0;
+    border-bottom: 2px solid #d1b6c7b7;
+}
+
+.boarder__team {
+    width: 30%;
+    margin: auto;
+    padding-top: 4%;
+    border: 0;
+    border-bottom: 2px solid #d1b6c7b7;
+}
+
+.application-form {
+    background-color: #FFEFEC;
+    color: #6433187e;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 330px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.application-form__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #632E11;
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.amazing-flowers__title {
+    font-size: 14px;
+}
+
+.amazing-flowers {
+    margin-left: 20px;
+}
+
+.icon__application {
+    width: 14px;
+    height: 15px;
+}
+
+.icons__application {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    width: 60%;
+    margin: auto;
+}
+
+input {
+    margin: 5px;
+}
+
+.form-input {
+    height: 40px;
+    margin: 5px;
+}
+
+.form-input ::placeholder {
+    padding-bottom: 25px;
+}
+
+.form-button {
+    background-color: #6433187e;
+    color: white;
+    border: 0;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.page-footer {
+    color: #B090A4;
+    background-color: #d1b6c7c5;
+    min-height: 80px;
+}
+
+.page-footer__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin: 0%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.form-button:hover {
+    background-color: #D1B6C7;
+}
+
+.icons-header_a:hover path,
+.icons-header_a:focus path {
+    fill: #D1B6C7;
+}
+
+.icon__application:hover path,
+.icon__application:focus path {
+    fill: #D1B6C7;
+}
+
+
+/* светлая тема */
+
+.lightTheme {
+    background-color: white;
+    color: black;
+}
+
+.lightTheme .page-header {
+    background-color: #FBF2F2;
+}
+
+.lightTheme .menu__btn {
+    color: #6433189f;
+}
+
+.lightTheme .menu__box {
+    background-color: #FBF2F2;
+}
+
+.lightTheme .menu__item {
+    color: #632E11;
+    background-color: none;
+}
+
+.lightTheme .menu__item:hover {
+    background-color: #FBF2F2;
+}
+
+.lightTheme .application-form {
+    background-color: #FFEFEC;
+    color: #6433187e;
+}
+
+.lightTheme .application-form__title {
+    color: #632E11;
+}
+
+.lightTheme .form-button {
+    background-color: #6433187e;
+    color: white;
+}
+
+.lightTheme .page-footer {
+    color: #B090A4;
+    background-color: #d1b6c7c5;
+}
+
+.lightTheme .themeButton {
+    background-color: #FBF2F2;
+}
+
+.lightTheme .menu__item:hover {
+    background-color: #eed9d9;
+    max-width: 200px;
+}
+
+
+/*темная тема*/
+
+.themeButton {
+    background-image: url(/img/Vector-2\ —\ копия.svg);
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: #EADCDC;
+}
+
+.darkTheme .logo-img {
+    visibility: hidden;
+}
+
+.darkTheme .page-header {
+    background-color: #EADCDC;
+}
+
+.darkTheme .menu__box {
+    background-color: #EADCDC;
+}
+
+.darkTheme .about {
+    background-color: #917687;
+}
+
+.darkTheme .application-form {
+    background-color: #DCCDCA;
+}
+
+.darkTheme .application-form__title {
+    color: #632E11;
+}
+
+.darkTheme .form-button {
+    background-color: #6433187e;
+    color: rgb(221, 204, 204);
+}
+
+.darkTheme .page-footer {
+    color: #fae5f2c5;
+    background-color: #99758C;
+}
+
+.darkTheme .form-button:hover {
+    background-color: #b38ca4;
+}
+
+.darkTheme .icons-header_a:hover path,
+.icons-header_a:focus path {
+    fill: #cfb5c6;
+}
+
+.darkTheme .icons-header_a:hover {
+    color: #D1B6C7;
+}
+
+.darkTheme .icons-header:hover {
+    color: #D1B6C7;
+}
+
+.darkTheme .icon__application:hover {
+    color: #D1B6C7;
+}
+
+.darkTheme .icon__application-a:hover {
+    color: #D1B6C7;
+}
+
+.darkTheme .icon__application:hover path,
+.icon__application:focus path {
+    fill: #D1B6C7;
+}
+
+
+/*телефоны горизонтально*/
+
+@media (min-width:640px) {
+    .icons-header_a:hover {
+        color: #D1B6C7;
+    }
+    .logo-img {
+        height: 90%;
+    }
+    .form {
+        width: 60%;
+    }
+    .amazing-flowers__form {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 50px;
+    }
+    .icons__application {
+        width: 40%;
+    }
+    .application-form__title {
+        padding-top: 5%;
+    }
+    .form-button {
+        width: 35%;
+    }
+    .amazing-flowers__main {
+        height: 350px;
+    }
+}
+
+@media (min-width: 768px) {
+    .amazing-flowers__main {
+        height: 400px;
+    }
+    .about__img {
+        float: left;
+        padding-left: 10%;
+    }
+    .unic {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .unic__title,
+    .team__title {
+        font-size: 20px;
+    }
+    .unic__subtitle,
+    .team__subtitle {
+        font-size: 18px;
+    }
+    .about__txt {
+        width: 60%;
+        margin: 0;
+        margin-top: 15%;
+    }
+    .team {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+    }
+    .team__img {
+        padding-right: 10%;
+    }
+    .team__txt {
+        width: 60%;
+        margin: 0;
+        margin-top: 15%;
+    }
+    .menu__item:hover {
+        color: #D1B6C7;
+        background-color: transparent;
+    }
+    .checkbox__menu {
+        display: none;
+    }
+    .menu__btn {
+        display: none;
+    }
+    .menu__box {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        width: 50%;
+        height: 50px;
+        visibility: visible;
+        margin-right: auto;
+        left: 0%;
+        padding: 0;
+        box-shadow: none;
+    }
+    .logo-img {
+        float: left;
+    }
+    .icons__header {
+        width: 20%;
+        float: right;
+        visibility: visible;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        width: 60%;
+        margin: auto;
+    }
+    .amazing-flowers__title,
+    .page-footer__title {
+        font-size: 24px;
+    }
+    .amazing-flowers__subtitle,
+    .amazing-flowers__days,
+    .amazing-flowers__number {
+        font-size: 22px;
+    }
+    .application-form {
+        height: 500px;
+    }
+    .icon__application {
+        width: 22px;
+        height: 23px;
+    }
+    .amazing-flowers {
+        margin-left: 30px;
+    }
+    .amazing-flowers__form {
+        margin-top: 2%;
+    }
+    .form {
+        width: 75%;
+        margin-top: 5%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu__box {
+        margin-left: 25%;
+    }
+    .form-button {
+        width: 30%;
+    }
+    form {
+        width: 40%;
+    }
+    input {
+        height: 25px;
+    }
+    .amazing-flowers__main {
+        height: 400px;
+    }
+    .unic,
+    .team {
+        padding-top: 0;
+    }
+    .unic__title,
+    .team__title,
+    .unic__subtitle,
+    .team__subtitle {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .menu {
+        height: 0%;
+    }
+}
